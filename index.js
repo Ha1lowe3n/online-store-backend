@@ -2,6 +2,8 @@ const express = require("express");
 require("dotenv").config();
 
 const sequelize = require("./db.js");
+const models = require("./models/models"); //  подключаем модели в приложение (создаются таблицы в pgAdmin)
+
 const PORT = process.env.PORT || 5000;
 
 const app = express();
