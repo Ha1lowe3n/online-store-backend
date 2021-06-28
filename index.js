@@ -5,6 +5,7 @@ const cors = require("cors");
 const sequelize = require("./db");
 const models = require("./models/models"); //  подключаем модели в приложение (создаются таблицы в pgAdmin)
 const router = require("./routes/index");
+const errorHandler = require("./middleware/ErrorHandlingMiddleware");
 
 const PORT = process.env.PORT || 5000;
 
@@ -13,6 +14,9 @@ app.use(cors());
 // app.options("*", cors());
 app.use(express.json());
 app.use("/api", router);
+
+// обработка ошибок, последний middleware
+app.use(errorHandler);
 
 const start = async () => {
     try {
