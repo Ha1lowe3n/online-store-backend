@@ -73,7 +73,9 @@ Rating.belongsTo(Device);
 Device.hasMany(BasketDevice);
 BasketDevice.belongsTo(Device);
 
-Device.hasMany(DeviceInfo);
+// as info что-то вроде переименование (было device_infos, стало просто info)
+// as info - воспринимай меня как info
+Device.hasMany(DeviceInfo, { as: "info" });
 DeviceInfo.belongsTo(Device);
 
 Brand.belongsToMany(Type, { through: TypeBrand });
