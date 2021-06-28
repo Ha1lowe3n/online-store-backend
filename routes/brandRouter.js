@@ -4,9 +4,10 @@ const brandController = require("../controllers/brandController");
 
 const router = new Router();
 
-const { create, getBrand } = brandController;
+const { create, getBrand, deleteBrand } = brandController;
 
 router.post("/", create);
 router.get("/", getBrand);
+//router.delete("/:id", deleteBrand);
 
 module.exports = router;
