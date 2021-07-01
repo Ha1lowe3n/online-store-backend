@@ -76,7 +76,7 @@ class UserController {
     async checkUser(req, res) {
         const { id, email, role } = req.user;
         const token = generateJwt(id, email, role);
-        return res.json({ message: "Вы авторизованы" });
+        return res.json({ message: "Вы авторизованы", token: token });
     }
 }
 
